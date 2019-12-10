@@ -32,13 +32,13 @@ True                   PtfmYDOF    - Platform yaw rotation DOF (flag)
 0.0                    BlPitch(3)  - Blade 3 initial pitch (degrees) [unused for 2 blades]
 0.0                    TeetDefl    - Initial or fixed teeter angle (degrees) [unused for 3 blades]
 0.0                    Azimuth     - Initial azimuth angle for blade 1 (degrees)
-7.49                   RotSpeed    - Initial or fixed rotor speed (rpm)
+5.0                   RotSpeed    - Initial or fixed rotor speed (rpm)
 0.0                    NacYaw      - Initial or fixed nacelle-yaw angle (degrees)
 0.0                    TTDspFA     - Initial fore-aft tower-top displacement (meters)
 0.0                    TTDspSS     - Initial side-to-side tower-top displacement (meters)
 0.0                    PtfmSurge   - Initial or fixed horizontal surge translational displacement of platform (meters)
 0.0                    PtfmSway    - Initial or fixed horizontal sway translational displacement of platform (meters)
--0.00177               PtfmHeave   - Initial or fixed vertical heave translational displacement of platform (meters)
+0.0               PtfmHeave   - Initial or fixed vertical heave translational displacement of platform (meters)
 0.0                    PtfmRoll    - Initial or fixed roll tilt rotational displacement of platform (degrees)
 0.0                    PtfmPitch   - Initial or fixed pitch tilt rotational displacement of platform (degrees)
 0.0                    PtfmYaw     - Initial or fixed yaw rotational displacement of platform (degrees)
@@ -120,36 +120,42 @@ True                   TabDelim    - Use tab delimiters in text tabular output f
 3                      NBlGages    - Number of blade nodes that have strain gages for output [0 to 9] (-)
           5,            9,           13    BldGagNd    - List of blade nodes that have strain gages [1 to BldNodes] (-) [unused if NBlGages=0] BldGagNd    - List of blade nodes that have strain gages [1 to BldNodes] (-) [unused if NBlGages=0] BldGagNd    - List of blade nodes that have strain gages [1 to BldNodes] (-) [unused if NBlGages=0]
                    OutList             - The next line(s) contains a list of output parameters.  See OutListParameters.xlsx for a listing of available output channels, (-)
-"Azimuth"
-"BldPitch1"
-"GenSpeed"
-"IPDefl1"
-"LSSGagMya"
-"LSSGagMza"
-"OoPDefl1"
-"PtfmPitch"
-"PtfmRoll"
-"PtfmSurge"
-"PtfmSway"
-"RootFxc1"
-"RootFyc1"
-"RootFzc1"
-"RootMxc1"
-"RootMyc1"
-"RootMzc1"
-"RotSpeed"
-"RotTorq"
-"Spn2MLxb1"
-"Spn2MLyb1"
-"TTDspTwst"
-"TwHt1TPxi"
-"TwHt1TPyi"
-"TwstDefl1"
-"YawBrFxp"
-"YawBrFyp"
-"YawBrFzp"
-"YawBrMxp"
-"YawBrMyp"
-"YawBrMzp"
+"Azimuth"                 - Blade 1 azimuth angle
+"RotSpeed"                - Low-speed shaft speed
+"GenSpeed"                - High-speed shaft speed
+"OoPDefl1"                - Blade 1 out-of-plane deflection
+"IPDefl1"                 - Blade 1 in-plane     deflection
+"TwstDefl1"               - Blade 1 tip twist
+"BldPitch1"               - Blade 1 pitch angle
+"TTDspFA"                 - Tower fore-aft     deflection
+"TTDspSS"                 - Tower side-to-side deflection
+"TTDspTwst"               - Tower top twist
+"PtfmSurge"               - Platform translational surge displacement
+"PtfmSway"                - Platform translational sway  displacement
+"PtfmHeave"               - Platform translational heave displacement
+"PtfmRoll"                - Platform rotational roll  displacement
+"PtfmPitch"               - Platform rotational pitch displacement
+"PtfmYaw"                 - Platform rotational yaw   displacement
+"RootFxc1"                - Out-of-plane shear force at the root of blade 1
+"RootFyc1"                - In-plane     shear force at the root of blade 1
+"RootFzc1"                - Axial              force at the root of blade 1
+"RootMxc1"                - In-plane     bending moment at the root of blade 1
+"RootMyc1"                - Out-of-plane bending moment at the root of blade 1
+"RootMzc1"                - Pitching             moment at the root of blade 1
+"RotTorq"                 - Rotor torque
+"LSSGagMya"               - Low-speed shaft 0- rotating bending moments at the main bearing
+"LSSGagMza"               - Low-speed shaft 90-rotating bending moments at the main bearing
+"YawBrFxp"                - Fore-aft     shear force at the top of the tower (not rotating with nacelle yaw)
+"YawBrFyp"                - Side-to-side shear force at the top of the tower (not rotating with nacelle yaw)
+"YawBrFzp"                - Vertical           force at the top of the tower (not rotating with nacelle yaw)
+"YawBrMxp"                - Side-to-side bending moment at the top of the tower (not rotating with nacelle yaw)
+"YawBrMyp"                - Fore-aft     bending moment at the top of the tower (not rotating with nacelle yaw)
+"YawBrMzp"                - Yaw                  moment at the top of the tower (not rotating with nacelle yaw)
+"TwrBsFxt"                - Fore-aft     shear force at the base of the tower (platform)
+"TwrBsFyt"                - Side-to-side shear force at the base of the tower (platform)
+"TwrBsFzt"                - Vertical           force at the base of the tower (platform)
+"TwrBsMxt"                - Side-to-side bending moment at the base of the tower (platform)
+"TwrBsMyt"                - Fore-aft     bending moment at the base of the tower (platform)
+"TwrBsMzt"                - Yaw                  moment at the base of the tower (platform)
 END of input file (the word "END" must appear in the first 3 columns of this last OutList line)
 ---------------------------------------------------------------------------------------
