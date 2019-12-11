@@ -7,12 +7,12 @@ False                  Echo        - Echo input data to "<RootName>.ech" (flag)
 ---------------------- ENVIRONMENTAL CONDITION ---------------------------------
 9.80665                Gravity     - Gravitational acceleration (m/s^2)
 ---------------------- DEGREES OF FREEDOM --------------------------------------
-False                   FlapDOF1    - First flapwise blade mode DOF (flag)
-False                   FlapDOF2    - Second flapwise blade mode DOF (flag)
-False                   EdgeDOF     - First edgewise blade mode DOF (flag)
+True                   FlapDOF1    - First flapwise blade mode DOF (flag)
+True                   FlapDOF2    - Second flapwise blade mode DOF (flag)
+True                   EdgeDOF     - First edgewise blade mode DOF (flag)
 False                  TeetDOF     - Rotor-teeter DOF (flag) [unused for 3 blades]
-False                  DrTrDOF     - Drivetrain rotational-flexibility DOF (flag)
-False                   GenDOF      - Generator DOF (flag)
+True                  DrTrDOF     - Drivetrain rotational-flexibility DOF (flag)
+True                   GenDOF      - Generator DOF (flag)
 False                  YawDOF      - Yaw DOF (flag)
 True                   TwFADOF1    - First fore-aft tower bending-mode DOF (flag)
 True                   TwFADOF2    - Second fore-aft tower bending-mode DOF (flag)
@@ -32,7 +32,7 @@ True                   PtfmYDOF    - Platform yaw rotation DOF (flag)
 0.0                    BlPitch(3)  - Blade 3 initial pitch (degrees) [unused for 2 blades]
 0.0                    TeetDefl    - Initial or fixed teeter angle (degrees) [unused for 3 blades]
 0.0                    Azimuth     - Initial azimuth angle for blade 1 (degrees)
-7.56                    RotSpeed    - Initial or fixed rotor speed (rpm)
+0.0                    RotSpeed    - Initial or fixed rotor speed (rpm)
 0.0                    NacYaw      - Initial or fixed nacelle-yaw angle (degrees)
 0.0                    TTDspFA     - Initial fore-aft tower-top displacement (meters)
 0.0                    TTDspSS     - Initial side-to-side tower-top displacement (meters)
@@ -85,9 +85,9 @@ True                   PtfmYDOF    - Platform yaw rotation DOF (flag)
 1.902e+09              PtfmYIner   - Platform inertia for yaw rotation about the platform CM (kg m^2)
 ---------------------- BLADE ---------------------------------------------------
 30                     BldNodes    - Number of blade nodes (per blade) used for analysis (-)
-"IEA-15-240-RWT_ElastoDyn_blade.dat" BldFile1    - Name of file containing properties for blade 1 (quoted string)
-"IEA-15-240-RWT_ElastoDyn_blade.dat" BldFile2    - Name of file containing properties for blade 2 (quoted string)
-"IEA-15-240-RWT_ElastoDyn_blade.dat" BldFile3    - Name of file containing properties for blade 3 (quoted string) [unused for 2 blades]
+"WINDCRETE_PD_IEA-15-240-RWT_ElastoDyn_blade.dat" BldFile1    - Name of file containing properties for blade 1 (quoted string)
+"WINDCRETE_PD_IEA-15-240-RWT_ElastoDyn_blade.dat" BldFile2    - Name of file containing properties for blade 2 (quoted string)
+"WINDCRETE_PD_IEA-15-240-RWT_ElastoDyn_blade.dat" BldFile3    - Name of file containing properties for blade 3 (quoted string) [unused for 2 blades]
 ---------------------- ROTOR-TEETER --------------------------------------------
 0                      TeetMod     - Rotor-teeter spring/damper model {0: none, 1: standard, 2: user-defined from routine UserTeet} (switch) [unused for 3 blades]
 0.0                    TeetDmpP    - Rotor-teeter damper position (degrees) [used only for 2 blades and when TeetMod=1]
