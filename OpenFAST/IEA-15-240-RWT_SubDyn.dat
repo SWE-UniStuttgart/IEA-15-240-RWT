@@ -73,9 +73,9 @@ MemberID   NOutCnt    NodeCnt [NOutCnt=how many nodes to get output for [< 10]; 
    1          1          1
    3          1          1
 ------------------------- SSOutList: The next line(s) contains a list of output parameters that will be output in <rootname>.SD.out or <rootname>.out. ------
+
+END of output channels and end of file. (the word "END" must appear in the first 3 columns of this line)
 "M2N1MKxe, M2N1MKye"                 - The local side-to-side and fore-aft bending moments at node 1 of member 3 (located at 0 m, i.e. MSL).
 "M1N1MKxe, M1N1MKye"                 - The local side-to-side and fore-aft bending moments at node 1 of member 2 (located at -10 m, i.e. half way between MSL and mudline).
-"ReactFXss, ReactFYss, ReactFZss" - Base reactions: fore-aft shear, side-to-side shear and vertical forces at the mudline.
-"ReactMXss, ReactMYss, ReactMZss" - Base reactions: side-to-side, fore-aft and yaw moments at the mudline.
-END of output channels and end of file. (the word "END" must appear in the first 3 columns of this line)
-
+"-ReactFXss, -ReactFYss, -ReactFZss" - Base reactions: fore-aft shear, side-to-side shear and vertical forces at the mudline.
+"-ReactMXss, -ReactMYss, -ReactMZss" - Base reactions: side-to-side, fore-aft and yaw moments at the mudline.
