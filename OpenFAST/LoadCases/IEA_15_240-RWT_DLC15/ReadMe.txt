@@ -12,3 +12,6 @@ The wind files are provided.
      - Type2: Negative vertical shear
      - Type3: Positive horizontal shear
      - Type4: Negative horizontal shear
+
+
+- There is currently a bug in the pitch controller so please neglect the first 10 seconds in the simulation
