@@ -3,33 +3,33 @@ IEA 15 MW Offshore Reference Turbine
 ---------------------- SIMULATION CONTROL --------------------------------------
 True                   Echo        - Echo input data to <RootName>.ech (flag)
 "FATAL"                AbortLevel  - Error level when simulation should abort (string) {"WARNING", "SEVERE", "FATAL"}
-200.0                  TMax        - Total run time (s)
+300.0                  TMax        - Total run time (s)
 0.01                   DT          - Recommended module time step (s)
 2                      InterpOrder - Interpolation order for input/output time history (-) {1=linear, 2=quadratic}
-1                      NumCrctn    - Number of correction iterations (-) {0=explicit calculation, i.e., no corrections}
-1.0                    DT_UJac     - Time between calls to get Jacobians (s)
-4.0E7              UJacSclFact - Scaling factor used in Jacobians (-)
+0                      NumCrctn    - Number of correction iterations (-) {0=explicit calculation, i.e., no corrections}
+99999.0                DT_UJac     - Time between calls to get Jacobians (s)
+1000000.0              UJacSclFact - Scaling factor used in Jacobians (-)
 ---------------------- FEATURE SWITCHES AND FLAGS ------------------------------
 1                      CompElast   - Compute structural dynamics (switch) {1=ElastoDyn; 2=ElastoDyn + BeamDyn for blades}
-1                      CompInflow  - inflow wind velocities (switch) {0=still air; 1=InflowWind}
+1                      CompInflow  - Compute inflow wind velocities (switch) {0=still air; 1=InflowWind; 2=external from OpenFOAM}
 2                      CompAero    - Compute aerodynamic loads (switch) {0=None; 1=AeroDyn v14; 2=AeroDyn v15}
 1                      CompServo   - Compute control and electrical-drive dynamics (switch) {0=None; 1=ServoDyn}
 1                      CompHydro   - Compute hydrodynamic loads (switch) {0=None; 1=HydroDyn}
-0                      CompSub     - Compute sub-structural dynamics (switch) {0=None; 1=SubDyn}
-3                      CompMooring - Compute mooring system (switch) {0=None; 1=MAP; 2=FEAMooring; 3=MoorDyn; 4=OrcaFlex}
-0                      CompIce     - Compute ice loads (switch) {0=None; 1=IceFloe}
+0                      CompSub     - Compute sub-structural dynamics (switch) {0=None; 1=SubDyn; 2=External Platform MCKF}
+3                      CompMooring - Compute mooring system (switch) {0=None; 1=MAP++; 2=FEAMooring; 3=MoorDyn; 4=OrcaFlex}
+0                      CompIce     - Compute ice loads (switch) {0=None; 1=IceFloe; 2=IceDyn}
 ---------------------- INPUT FILES ---------------------------------------------
-"WINDCRETE_PD_IEA-15-240-RWT_ElastoDyn.dat" EDFile      - Name of file containing ElastoDyn input parameters (quoted string)
-""                     BDBldFile(1) - Name of file containing BeamDyn input parameters for blade 1 (quoted string)
-""                     BDBldFile(2) - Name of file containing BeamDyn input parameters for blade 2 (quoted string)
-""                     BDBldFile(3) - Name of file containing BeamDyn input parameters for blade 3 (quoted string)
+"WINDCRETE_PD_IEA-15-240-RWT_ElastoDyn.dat"  EDFile      - Name of file containing ElastoDyn input parameters (quoted string)
+"WINDCRETE_PD_IEA-15-240-RWT_BeamDyn.dat"    BDBldFile(1) - Name of file containing BeamDyn input parameters for blade 1 (quoted string)
+"WINDCRETE_PD_IEA-15-240-RWT_BeamDyn.dat"    BDBldFile(2) - Name of file containing BeamDyn input parameters for blade 2 (quoted string)
+"WINDCRETE_PD_IEA-15-240-RWT_BeamDyn.dat"    BDBldFile(3) - Name of file containing BeamDyn input parameters for blade 3 (quoted string)
 "WINDCRETE_PD_IEA-15-240-RWT_InflowFile.dat" InflowFile  - Name of file containing inflow wind input parameters (quoted string)
-"WINDCRETE_PD_IEA-15-240-RWT_AeroDyn15.dat" AeroFile    - Name of file containing aerodynamic input parameters (quoted string)
-"WINDCRETE_PD_IEA-15-240-RWT_ServoDyn.dat" ServoFile   - Name of file containing control and electrical-drive input parameters (quoted string)
-"WINDCRETE_PD_IEA-15-240-RWT_HydroDyn.dat" HydroFile   - Name of file containing hydrodynamic input parameters (quoted string)
-"unused" 			   SubFile	   - Name of file containing sub-structural input parameters (quoted string)
-"WINDCRETE_PD_15MW_MAP++.map"               MooringFile - Name of file containing mooring system input parameters (quoted string)
-"unused"               IceFile     - Name of file containing ice input parameters (quoted string)
+"WINDCRETE_PD_IEA-15-240-RWT_AeroDyn15.dat"  AeroFile    - Name of file containing aerodynamic input parameters (quoted string)
+"WINDCRETE_PD_IEA-15-240-RWT_ServoDyn.dat"   ServoFile   - Name of file containing control and electrical-drive input parameters (quoted string)
+"WINDCRETE_PD_IEA-15-240-RWT_HydroDyn.dat"   HydroFile   - Name of file containing hydrodynamic input parameters (quoted string)
+"unused"                                     SubFile     - Name of file containing sub-structural input parameters (quoted string)
+"WINDCRETE_PD_15MW_MoorDyn.dat"              MooringFile - Name of file containing mooring system input parameters (quoted string)
+"unused"                                     IceFile     - Name of file containing ice input parameters (quoted string)
 ---------------------- OUTPUT --------------------------------------------------
 True                   SumPrint    - Print summary data to "<RootName>.sum" (flag)
 10.0                   SttsTime    - Amount of time between screen status messages (s)
