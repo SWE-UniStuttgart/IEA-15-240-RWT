@@ -96,20 +96,23 @@ True                   UseBlCm     - Include aerodynamic pitching moment in calc
 "WINDCRETE_PD_IEA-15-240-RWT_AeroDyn15_blade.dat" ADBlFile(2) - Name of file containing distributed aerodynamic properties for Blade #2 (-) [unused if NumBl < 2]
 "WINDCRETE_PD_IEA-15-240-RWT_AeroDyn15_blade.dat" ADBlFile(3) - Name of file containing distributed aerodynamic properties for Blade #3 (-) [unused if NumBl < 3]
 ======  Tower Influence and Aerodynamics ============================================================= [used only when TwrPotent/=0, TwrShadow=True, or TwrAero=True]
-11                     NumTwrNds   - Number of tower nodes used in the analysis  (-) [used only when TwrPotent/=0, TwrShadow=True, or TwrAero=True]
+14                     NumTwrNds   - Number of tower nodes used in the analysis  (-) [used only when TwrPotent/=0, TwrShadow=True, or TwrAero=True]
 TwrElev        TwrDiam        TwrCd
 (m)              (m)           (-)
-  15.           10.             1.
-  28.           10.             1.
-  41.            9.926          1.
-  54.            9.443          1.
-  67.            8.833          1.
-  80.            8.151          1.
-  93.            7.39           1.
- 106.            6.909          1.
- 119.            6.748          1.
- 132.            6.572          1.
- 144.495         6.5            1.
+15         12.52          1
+25         12.0610466     1
+35         11.60209319    1
+45         11.14313979    1
+55         10.68418639    1
+65         10.22523298    1
+75         9.76627958     1
+85         9.307326177    1
+95         8.848372774    1
+105        8.389419371    1
+115        7.930465967    1
+125        7.471512564    1
+135        7.012559161    1
+144.495    6.5            1
 ======  Tower Influence and Aerodynamics ============================================================= [used only when TwrPotent/=0, TwrShadow=True, or TwrAero=True]
 True                   SumPrint    - Generate a summary file listing input options and interpolated properties to "<rootname>.AD.sum"?  (flag)
 9                      NBlOuts     - Number of blade node outputs [0 - 9] (-)

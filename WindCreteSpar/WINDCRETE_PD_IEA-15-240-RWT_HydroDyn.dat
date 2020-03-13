@@ -30,8 +30,8 @@ TRUE             WaveNDAmp      - Flag for normally distributed amplitudes      
 ---------------------- 2ND-ORDER WAVES ----------------------------------------- [unused with WaveMod=0 or 6]
 False            WvDiffQTF      - Full difference-frequency 2nd-order wave kinematics (flag)
 False            WvSumQTF       - Full summation-frequency  2nd-order wave kinematics (flag)
-             0   WvLowCOffD     - Low  frequency cutoff used in the difference-frequencies (rad/s) [Only used with a difference-frequency method]
-       3.04292   WvHiCOffD      - High frequency cutoff used in the difference-frequencies (rad/s) [Only used with a difference-frequency method]
+           0.1   WvLowCOffD     - Low  frequency cutoff used in the difference-frequencies (rad/s) [Only used with a difference-frequency method]
+           2.5   WvHiCOffD      - High frequency cutoff used in the difference-frequencies (rad/s) [Only used with a difference-frequency method]
       0.314159   WvLowCOffS     - Low  frequency cutoff used in the summation-frequencies  (rad/s) [Only used with a summation-frequency  method]
            3.2   WvHiCOffS      - High frequency cutoff used in the summation-frequencies  (rad/s) [Only used with a summation-frequency  method]
 ---------------------- CURRENT ------------------------------------------------- [unused with WaveMod=6]
