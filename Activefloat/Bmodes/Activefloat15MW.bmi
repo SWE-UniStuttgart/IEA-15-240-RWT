@@ -1,0 +1,99 @@
+BModes v1.03 Main Input File
+NAUTILUS-10 tower of the publicly shared model of NAUTILUS-DTU10 MW FOWT, designed for Gulf of Maine fixed to the ground (6 DOFs constrained) with RNA. 
+Josean Galvan (josean.galvan@tecnalia.com) and M. Sanchez-Lara (josune.sanchez@tecnalia.com); Tecnalia R&I, Offshore Renewable Energy area, february 2018.
+General parameters
+             True                Echo      Echo input file contents to *.echo file if true.
+             2                   beam_type   1: blade, 2: tower (-)
+             0.00                romg:     rotor speed (rpm), automatically set to zero for tower modal analysis
+             1.000               romg_mult:   rotor speed muliplicative factor (-)
+             121                 radius:    rotor tip radius measured along coned blade axis, OR tower height above ground level [onshore] or MSL [offshore] (m)
+             12.1                hub_rad:    hub radius measured along coned blade axis OR tower rigid-base height (m)
+             0                   precone:    built-in precone angle (deg), automatically set to zero for a tower
+             0                   bl_thp:    blade pitch setting (deg), automatically set to zero for a tower
+             1                   hub_conn:   hub-to-blade or tower-base boundary condition [1: cantilevered; 2: free-free; 3: only axial and torsion constraints] (-)
+             20                  modepr:    number of modes to be printed (-)
+             f                   TabDelim    (true: tab-delimited output tables; false: space-delimited tables)
+             f                   mid_node_tw  (true: output twist at mid-node of elements; false: no mid-node outputs)
+
+Blade-tip or tower-top mass properties                                                                                                                                                                    
+          992900                 tip_mass    blade-tip or tower-top mass (see users' manual) (kg)                                                                                                             
+         -0.0214235              cm_loc     tip-mass c.m. offset from the tower axis measured along the tower-tip x reference axis (m)                                                                       
+          4.407                  cm_axial    tip-mass c.m. offset tower tip measures axially along the z axis (m)                                                                                              
+          3.20719e+08            ixx_tip    blade lag or tower s-s mass moment of inertia about the tip-section x reference axis (kg-m^2)                                                                     
+          2.58418e+08            iyy_tip    blade flap or tower f-a mass moment of inertia about the tip-section y reference axis (kg-m^2)                                                                    
+          2.99925e+08            izz_tip    torsion mass moment of inertia about the tip-section z reference axis (kg-m^2)                                                                                    
+          0                      ixy_tip    cross product of inertia about x and y reference axes(kg-m^2)                                                                                                       
+          1.10359e+07            izx_tip    cross product of inertia about z and x reference axes(kg-m^2)                                                                                                      
+          0                      iyz_tip    cross product of inertia about y and z reference axes(kg-m^2)                                                                                                            
+
+Distributed-property identifiers
+               1                    id_mat:    material_type [1: isotropic; non-isotropic composites option not yet available]
+'Activefloat15MW.dat'   sec_props_file:name of beam section properties file (-)
+
+Property scaling factors
+               1                sec_mass_mult: mass density multiplier (-)
+               1                flp_iner_mult: blade flap or tower f-a inertia multiplier (-)
+               1                lag_iner_mult: blade lag or tower s-s inertia multiplier (-)
+               1                flp_stff_mult: blade flap or tower f-a bending stiffness multiplier (-)
+               1                edge_stff_mult:blade lag or tower s-s bending stiffness multiplier (-)
+               1                tor_stff_mult: torsion stiffness multiplier (-)
+               1                axial_stff_multaxial stiffness multiplier (-)
+               1                cg_offst_mult: cg offset multiplier (-)
+               1                sc_offst_mult: shear center multiplier (-)
+               1                tc_offst_mult: tension center multiplier (-)
+
+Finite element discretization
+               9                   nselt:     no of blade or tower elements (-)
+Distance of element boundary nodes from blade or flexible-tower root (normalized wrt blade or tower length), el_loc()
+0.0000	0.1111	0.2222	0.3333	0.4444	0.5556	0.6667	0.7778	0.8889	1.0000	
+
+Properties of additional tower support subsystem (read only if beam_type is 2)
+0                 tow_support:  additional tower support [0: no additional support; 1: floating-platform or monopile with or without tension wires] (-)
+0.0                  draft:     depth of tower base from the ground or the MSL (mean sea level) (m)
+0.0                cm_pform:   distance of platform c.m. below the MSL (m)
+0.0              mass_pform:  platform mass (kg)
+Platform mass inertia 3X3 matrix (i_matrix_pform):
+               0                   0            0
+               0                   0            0
+               0                   0            0
+               0                   ref_msl:    distance of platform reference point below the MSL (m)
+Platform-reference-point-referred hydrodynamic 6X6 matrix (hydro_M): Infinite-period values
+0.0	0.0	0.0	0.0	0.0	0.0
+0.0	0.0	0.0	0.0	0.0	0.0
+0.0	0.0	0.0	0.0	0.0	0.0
+0.0	0.0	0.0	0.0	0.0	0.0
+0.0	0.0	0.0	0.0	0.0	0.0
+0.0	0.0	0.0	0.0	0.0	0.0
+Platform-reference-point-referred hydrodynamic 6X6 stiffness matrix (hydro_K):
+0.0	0.0	0.0	0.0	0.0	0.0
+0.0	0.0	0.0	0.0	0.0	0.0
+0.0	0.0	0.0	0.0	0.0	0.0
+0.0	0.0	0.0	0.0	0.0	0.0
+0.0	0.0	0.0	0.0	0.0	0.0
+0.0	0.0	0.0	0.0	0.0	0.0
+Mooring-system 6X6 stiffness matrix (mooring_K):
+0.0	0.0	0.0	0.0	0.0	0.0
+0.0	0.0	0.0	0.0	0.0	0.0
+0.0	0.0	0.0	0.0	0.0	0.0
+0.0	0.0	0.0	0.0	0.0	0.0
+0.0	0.0	0.0	0.0	0.0	0.0
+0.0	0.0	0.0	0.0	0.0	0.0
+
+Distributed (hydrodynamic) added-mass per unit length along a flexible portion of the tower length:
+               0                n_secs_m_distr:number of sections at which added mass per unit length is specified (-)
+               0                  z_distr_m:   row array of size n_added_m_pts; section locations wrt the flexible tower base over which distributed mass is specified (m)
+               0                   distr_m:    row array of size n_added_m_pts; added distributed masses per unit length (kg/m)
+
+Distributed elastic stiffness per unit length along a flexible portion of the tower length:
+               0                n_secs_k_distr:number of points at which distributed stiffness per unit length is specified (-)
+               0                       1       z_distr_k:         row array of size n_added_m_pts; section locations wrt the flexible tower base over which distributed stiffness is specified (m)
+            0.00E+00               0.00E+00    distr_k:           row array of size n_added_m_pts; distributed stiffness per unit length] (N/m^2)
+
+Tension-wires data
+               0                n_attachments: no of wire-attachment locations on tower, maxm allowable is 2; 0: no tension-wire support (-)
+               0                   n_wires:    number of wires attached at each location (must be 3 or higher) (-)
+               0                 node_attach:  node numbers of attacments location (node number must be more than 1 and less than nselt+2) (-)
+               0                 wire_stfness: wire sifnness in each set (see users' manual) (N/m)
+               45                  th_wire:    angle of tension wires (wrt a horizontal plane) at each attachment point (deg)
+
+END of Main Input File Data *********************************************************************
