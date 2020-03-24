@@ -96,19 +96,20 @@ True                   UseBlCm     - Include aerodynamic pitching moment in calc
 "Activefloat_IEA-15-240-RWT_AeroDyn15_blade.dat" ADBlFile(2) - Name of file containing distributed aerodynamic properties for Blade #2 (-) [unused if NumBl < 2]
 "Activefloat_IEA-15-240-RWT_AeroDyn15_blade.dat" ADBlFile(3) - Name of file containing distributed aerodynamic properties for Blade #3 (-) [unused if NumBl < 3]
 ======  Tower Influence and Aerodynamics ============================================================= [used only when TwrPotent/=0, TwrShadow=True, or TwrAero=True]
-10                     NumTwrNds   - Number of tower nodes used in the analysis  (-) [used only when TwrPotent/=0, TwrShadow=True, or TwrAero=True]
+11                     NumTwrNds   - Number of tower nodes used in the analysis  (-) [used only when TwrPotent/=0, TwrShadow=True, or TwrAero=True]
 TwrElev        TwrDiam        TwrCd
 (m)              (m)           (-)
-  12.1           10.             1.
-  24.2            9.886020       1.
-  36.3            9.504552       1.
-  48.4            8.914397       1.
-  60.5            8.470046       1.
-  72.6            8.131834       1.
-  87.4            7.978348       1.
- 96.8             7.842655       1.
- 108.9            7.372148       1.
- 121.             6.5            1.
+   9.000          10.000000       1.
+  12.950          10.000000       1.
+  25.899           9.886020       1.
+  38.849           9.504552       1.
+  51.798           8.914397       1.
+  64.748           8.470046       1.
+  77.697           8.131834       1.
+  90.647           7.978348       1.
+ 103.596           7.842655       1.
+ 116.546           7.372148       1.
+ 129.495           6.500000       1.
 ======  Tower Influence and Aerodynamics ============================================================= [used only when TwrPotent/=0, TwrShadow=True, or TwrAero=True]
 True                   SumPrint    - Generate a summary file listing input options and interpolated properties to "<rootname>.AD.sum"?  (flag)
 9                      NBlOuts     - Number of blade node outputs [0 - 9] (-)

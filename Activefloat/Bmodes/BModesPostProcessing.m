@@ -1,9 +1,9 @@
 %% BModes Post Processing
 
-path2fig = 'D:\Projects\COREWIND\WP1\ACTIVEFLOAT\Bmodes';
+path2fig = 'D:\Projects\COREWIND\WP1\ACTIVEFLOAT\OpenFASTModel\Bmodes';
 plotRoot = 'Ativefloat_';
 
-path2BModesEvalXls = 'D:\Projects\COREWIND\WP1\ACTIVEFLOAT\Bmodes\BModesEval.xlsx';
+path2BModesEvalXls = 'D:\Projects\COREWIND\WP1\ACTIVEFLOAT\OpenFASTModel\Bmodes\BModesEval.xlsx';
 span_loc = xlsread(path2BModesEvalXls,'C4:C13');
 FAdispM1_ = xlsread(path2BModesEvalXls,'D4:D13');
 FAdispM2_ = xlsread(path2BModesEvalXls,'E4:E13');
